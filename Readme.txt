@@ -1,15 +1,16 @@
 1. Use at least 7 classes. One must be abstract. Each class should have it's own responsibility.
-abstract class Patient - 3 methods, 2 fields
-class CancerPatient extends Patient - Homeservice, Hospitalservice
-class LeukemiaPatient extends CancerPatient
-class MedicalRecord 
-class ERPatient extends Patient - Hospitalservice
-class RadiologyPatient extends Patient - Hospitalservice
-class Doctor
+class main
+class Startadministration
+abstract class Treatment
+class Surgery
+class Chemotherapy
+class MRI
+class PsychoTreatment
+class Patient
 
 2. Use at least 2 interfaces.
-interface Homeservice - 5 methods
-interface Hospitalservice - 5 methods
+interface Deductable
+interface 
 
 3. 80% of the methods should have returntypes other then void.
 4. 40% of parameters should be of a classType.
