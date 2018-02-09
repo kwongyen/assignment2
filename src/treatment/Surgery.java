@@ -6,19 +6,22 @@ import misc.Equipment;
 import misc.Price;
 
 public class Surgery extends Treatment implements Reservable, Deductable{
-
-    private Price surgeryPrice;
+    private Price surgeryprice;
+    public Surgery(){
+        setTreatmentPrice();
+    }
 
     public Price setTreatmentPrice(){
-        surgeryPrice = Price.createPrice(3999.99);
-        return surgeryPrice;
+        surgeryprice = Price.createPrice(3999.99);
+        System.out.println("Surgery default price = "+surgeryprice.getValue());
+        return surgeryprice;
     }
 
     @Override
     public Price deductTreatment() {
-        surgeryPrice.setValue(1999.99);
-        System.out.println(surgeryPrice.getValue());
-        return surgeryPrice;
+        surgeryprice.setValue(1999.99);
+        System.out.println("Deductable surgery price = "+surgeryprice.getValue());
+        return surgeryprice;
     }
 
     @Override

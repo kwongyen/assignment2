@@ -2,15 +2,11 @@ package misc;
 
 public class Price {
 
-
     int date;
-
-
-
     private double value = 0;
 
     private Price(double value){
-        this.value=99.9;
+        this.value=value;
     }
 
     public static Price createPrice(double value){

@@ -6,10 +6,15 @@ import misc.Equipment;
 import misc.Price;
 
 public class MRI extends Treatment implements Reservable, Deductable{
+    private Price mriprice;
+    public MRI(){
+        setTreatmentPrice();
+    }
 
     public Price setTreatmentPrice(){
-        System.out.println("MRI IS 999.99");
-        return Price.createPrice(999.99);
+        mriprice = Price.createPrice(999.99);
+        System.out.println("MRI default price = "+mriprice.getValue());
+        return mriprice;
     }
 
     @Override
