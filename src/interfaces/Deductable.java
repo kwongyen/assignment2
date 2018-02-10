@@ -4,5 +4,5 @@ import misc.Price;
 import treatment.Treatment;
 
 public interface Deductable {
-    Price deductTreatment();
+    Price deductTreatment(Deductable treatment, int date);
 }

@@ -4,18 +4,24 @@ import interfaces.Deductable;
 import misc.Price;
 
 public class Chemotherapy extends Treatment implements Deductable{
+
     private Price chemotherapyprice;
+
     public Chemotherapy(){
         setTreatmentPrice();
     }
 
     public Price setTreatmentPrice(){
-        chemotherapyprice = Price.createPrice(600);
-        System.out.println("Chemotherapy default price = "+chemotherapyprice.getValue());
+        chemotherapyprice = Price.createPrice(600,100918);
+        System.out.println("Chemotherapy default price = " + chemotherapyprice.getValue());
         return chemotherapyprice;
     }
+
     @Override
-    public Price deductTreatment() {
-        return null;
+    public Price deductTreatment(Deductable treatment, int date) {
+        chemotherapyprice.setValue(1999.99);
+        System.out.println("Deductable chemotherapy price = " + chemotherapyprice.getValue());
+        System.out.println(date);
+        return chemotherapyprice;
     }
 }
