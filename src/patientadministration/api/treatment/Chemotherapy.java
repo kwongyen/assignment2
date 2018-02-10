@@ -1,7 +1,7 @@
-package treatment;
+package patientadministration.api.treatment;
 
-import interfaces.Deductable;
-import misc.Price;
+import patientadministration.api.interfaces.Deductable;
+import patientadministration.api.misc.Price;
 
 public class Chemotherapy extends Treatment implements Deductable{
     private Price chemotherapyprice;

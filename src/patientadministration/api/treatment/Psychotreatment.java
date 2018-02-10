@@ -1,6 +1,6 @@
-package treatment;
+package patientadministration.api.treatment;
 
-import misc.Price;
+import patientadministration.api.misc.Price;
 
 public class Psychotreatment extends Treatment {
     private Price psychotreatmentprice;

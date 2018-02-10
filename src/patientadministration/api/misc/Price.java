@@ -1,4 +1,4 @@
-package misc;
+package patientadministration.api.misc;
 
 public class Price {
 

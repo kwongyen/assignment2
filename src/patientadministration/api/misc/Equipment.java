@@ -1,8 +1,6 @@
-package misc;
+package patientadministration.api.misc;
 
-import interfaces.Reservable;
-import treatment.MRI;
-import treatment.Surgery;
+import patientadministration.api.interfaces.Reservable;
 
 public class Equipment {
     private boolean reserveTable = false;

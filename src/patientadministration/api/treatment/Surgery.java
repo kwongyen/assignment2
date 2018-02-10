@@ -1,9 +1,9 @@
-package treatment;
+package patientadministration.api.treatment;
 
-import interfaces.Deductable;
-import interfaces.Reservable;
-import misc.Equipment;
-import misc.Price;
+import patientadministration.api.interfaces.Deductable;
+import patientadministration.api.interfaces.Reservable;
+import patientadministration.api.misc.Equipment;
+import patientadministration.api.misc.Price;
 
 public class Surgery extends Treatment implements Reservable, Deductable{
     private Price surgeryprice;
