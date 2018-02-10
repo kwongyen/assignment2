@@ -2,6 +2,7 @@ package treatment;
 
 import interfaces.Deductable;
 import interfaces.Reservable;
+import main.UnvalidDateException;
 import misc.Equipment;
 import misc.Price;
 
@@ -29,7 +30,10 @@ public class Surgery extends Treatment implements Reservable, Deductable{
     }
 
     @Override
-    public Equipment reserveEquipment(Reservable treatment, int date) {
+    public Equipment reserveEquipment(Reservable treatment, int date) throws UnvalidDateException {
+        if (date < 0 || date > 999999){
+            throw new UnvalidDateException("Unvalid date");
+        }
         equipment = Equipment.createEquipment(Equipment.TABLE, date);
         System.out.println(date);
         return equipment;
