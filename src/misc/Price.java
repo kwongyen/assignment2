@@ -7,8 +7,12 @@ public class Price {
     private double value;
     private int date;
 
-    private Price(double value, int date) throws UnvalidDateException{
+    private Price (double value){
         this.value = value;
+    }
+
+    private Price(double value, int date) throws UnvalidDateException{
+        this(value);
         if (date < 0 || date > 999999){
             throw new UnvalidDateException("Unvalid date in Price");
         }
