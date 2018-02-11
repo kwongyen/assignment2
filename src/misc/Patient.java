@@ -1,9 +1,13 @@
 package misc;
 
+
 import treatment.Treatment;
+
 import java.util.ArrayList;
 
 public class Patient {
+
+    public static int numberOfPatients = 0;
 
     private String firstName;
     private String lastName;
@@ -15,6 +19,7 @@ public class Patient {
     private ArrayList<Treatment> requiredTreatments = new ArrayList<>();
 
     public Patient(String firstName, String lastName, int age, int height, float weight, String gender) {
+        numberOfPatients++;
         this.patientId = generatePatientId();
         this.firstName = firstName;
         this.lastName = lastName;
@@ -24,8 +29,12 @@ public class Patient {
         this.gender = gender;
     }
 
+    public Patient(){
+        numberOfPatients++;
+    }
+
     private int generatePatientId() {
-        return 1;
+        return numberOfPatients;
     }
 
     public float calculateBMI(){

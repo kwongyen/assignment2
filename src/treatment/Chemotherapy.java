@@ -8,8 +8,12 @@ public class Chemotherapy extends Treatment implements Deductable{
 
     private Price chemotherapyprice;
 
-    public Chemotherapy() throws UnvalidDateException{
-        setTreatmentPrice();
+    public Chemotherapy() {
+        try {
+            setTreatmentPrice();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Price setTreatmentPrice() throws UnvalidDateException {

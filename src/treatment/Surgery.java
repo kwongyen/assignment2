@@ -11,8 +11,12 @@ public class Surgery extends Treatment implements Reservable, Deductable{
     private Price surgeryprice;
     private Equipment equipment;
 
-    public Surgery() throws UnvalidDateException{
-        setTreatmentPrice();
+    public Surgery(){
+        try {
+            setTreatmentPrice();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Price setTreatmentPrice() throws UnvalidDateException{

@@ -11,8 +11,12 @@ public class MRI extends Treatment implements Reservable, Deductable{
     private Price mriprice;
     private Equipment equipment;
 
-    public MRI()throws UnvalidDateException{
-        setTreatmentPrice();
+    public MRI() {
+        try {
+            setTreatmentPrice();
+        } catch(Exception e){
+            throw new RuntimeException(e);
+        }
     }
 
     public Price setTreatmentPrice()throws UnvalidDateException{
