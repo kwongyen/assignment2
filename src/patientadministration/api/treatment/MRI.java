@@ -10,6 +10,7 @@ public class MRI extends Treatment implements Reservable, Deductable{
     public MRI(){
         setTreatmentPrice();
     }
+    private double deductionPercentage = 0.5;
 
     public Price setTreatmentPrice(){
         mriprice = Price.createPrice(999.99);
@@ -26,6 +27,8 @@ public class MRI extends Treatment implements Reservable, Deductable{
 
     @Override
     public Price deductTreatment() {
-        return null;
+        mriprice.setValue(mriprice.getValue()*deductionPercentage);
+        System.out.println("Treatment has been deducted. New price is: " + mriprice.getValue());
+        return  mriprice;
     }
 }
