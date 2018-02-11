@@ -8,13 +8,17 @@ public class Psychotreatment extends Treatment {
     private Price psychotreatmentprice;
     private int priceValue;
 
-    public Psychotreatment(int value) throws UnvalidDateException{
-        this.priceValue = value;
-        setTreatmentPrice();
+    public Psychotreatment(int value){
+        try {
+            this.priceValue = value;
+            setTreatmentPrice();
+        } catch (Exception e){
+        throw new RuntimeException(e);
+        }
     }
 
-    public Psychotreatment() throws UnvalidDateException{
-        this(100);
+    public Psychotreatment(){
+            this.priceValue = 100;
     }
 
     public Price setTreatmentPrice() throws UnvalidDateException {
