@@ -7,5 +7,6 @@ public class StartAdministration {
         Administration administration = patientadministration.api.main.Administration.Run();
 
         administration.registerCurrentPatients();
+        administration.registerNewPatient("Daan", "Bovenbeen", 23, 190, 100, "Male");
     }
 }

@@ -21,23 +21,17 @@ public class Administration {
     public void registerTreatment(int patientId, String treatment) {
 
         Patient currentPatient;
-
-        for (Patient patient : patientList) {
-            if (patientId == (patient.getPatientId())){
-                currentPatient = patient;
-
-                for (String treatmentOption : TreatmentsConstant.TREATMENTS) {
-                    if (treatment.equals(treatmentOption)){
-                        currentPatient.setRequiredTreatments();
-                    }
-                }
-            }
-        }
+        // go through the list to get the current patient with the patientId
+        // use the patient to do new stuff.
     }
 
-    public void reserveTreatment(){
+    public void reserveTreatment(int patientId){
 
+        // select current patient with patientId
+        // try to deduct the treatment automatically
     }
+
+
 
 //    MRI mri = new MRI();
 //    Equipment mriEquipment = mri.reserveEquipment(mri, 100918);
