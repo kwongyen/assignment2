@@ -1,6 +1,6 @@
-package interfaces;
+package patientadministration.api.interfaces;
 
-import misc.Equipment;
+import patientadministration.api.misc.Equipment;
 
 public interface Reservable {
     Equipment reserveEquipment(Reservable treatment, int date);

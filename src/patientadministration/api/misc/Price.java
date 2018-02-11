@@ -1,9 +1,9 @@
-package misc;
+package patientadministration.api.misc;
 
 public class Price {
 
     int date;
-    private double value = 0;
+    private double value;
 
     private Price(double value){
         this.value=value;

@@ -1,15 +1,16 @@
-package treatment;
+package patientadministration.api.treatment;
 
-import interfaces.Deductable;
-import interfaces.Reservable;
-import misc.Equipment;
-import misc.Price;
+import patientadministration.api.interfaces.Deductable;
+import patientadministration.api.interfaces.Reservable;
+import patientadministration.api.misc.Equipment;
+import patientadministration.api.misc.Price;
 
 public class MRI extends Treatment implements Reservable, Deductable{
     private Price mriprice;
     public MRI(){
         setTreatmentPrice();
     }
+    private double deductionPercentage = 0.5;
 
     public Price setTreatmentPrice(){
         mriprice = Price.createPrice(999.99);
@@ -26,6 +27,8 @@ public class MRI extends Treatment implements Reservable, Deductable{
 
     @Override
     public Price deductTreatment() {
-        return null;
+        mriprice.setValue(mriprice.getValue()*deductionPercentage);
+        System.out.println("Treatment has been deducted. New price is: " + mriprice.getValue());
+        return  mriprice;
     }
 }
