@@ -1,17 +1,18 @@
 package treatment;
 
 import interfaces.Deductable;
+import main.UnvalidDateException;
 import misc.Price;
 
 public class Chemotherapy extends Treatment implements Deductable{
 
     private Price chemotherapyprice;
 
-    public Chemotherapy(){
+    public Chemotherapy() throws UnvalidDateException{
         setTreatmentPrice();
     }
 
-    public Price setTreatmentPrice(){
+    public Price setTreatmentPrice() throws UnvalidDateException {
         chemotherapyprice = Price.createPrice(600,100918);
         System.out.println("Chemotherapy default price = " + chemotherapyprice.getValue());
         return chemotherapyprice;

@@ -2,6 +2,7 @@ package treatment;
 
 import interfaces.Deductable;
 import interfaces.Reservable;
+import main.UnvalidDateException;
 import misc.Equipment;
 import misc.Price;
 
@@ -10,11 +11,11 @@ public class MRI extends Treatment implements Reservable, Deductable{
     private Price mriprice;
     private Equipment equipment;
 
-    public MRI(){
+    public MRI()throws UnvalidDateException{
         setTreatmentPrice();
     }
 
-    public Price setTreatmentPrice(){
+    public Price setTreatmentPrice()throws UnvalidDateException{
         mriprice = Price.createPrice(999.99,100918);
         System.out.println("MRI default price = "+mriprice.getValue());
         return mriprice;
@@ -29,7 +30,10 @@ public class MRI extends Treatment implements Reservable, Deductable{
     }
 
     @Override
-    public Equipment reserveEquipment(Reservable treatment, int date) {
+    public Equipment reserveEquipment(Reservable treatment, int date) throws UnvalidDateException {
+        if (date < 0 || date > 999999){
+            throw new UnvalidDateException("Unvalid date in reserveEquipment");
+        }
         equipment = Equipment.createEquipment(Equipment.ROOM, date);
         System.out.println(date);
         return equipment;
