@@ -11,11 +11,11 @@ public class Surgery extends Treatment implements Reservable, Deductable{
     private Price surgeryprice;
     private Equipment equipment;
 
-    public Surgery(){
+    public Surgery() throws UnvalidDateException{
         setTreatmentPrice();
     }
 
-    public Price setTreatmentPrice(){
+    public Price setTreatmentPrice() throws UnvalidDateException{
         surgeryprice = Price.createPrice(3999.99,100918);
         System.out.println("Surgery default price = " + surgeryprice.getValue());
         return surgeryprice;
@@ -32,7 +32,7 @@ public class Surgery extends Treatment implements Reservable, Deductable{
     @Override
     public Equipment reserveEquipment(Reservable treatment, int date) throws UnvalidDateException {
         if (date < 0 || date > 999999){
-            throw new UnvalidDateException("Unvalid date");
+            throw new UnvalidDateException("Unvalid date in reserveEquipment");
         }
         equipment = Equipment.createEquipment(Equipment.TABLE, date);
         System.out.println(date);
